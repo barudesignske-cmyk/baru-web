@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  --dashboard-bg: #f5f7f9;
+  --dashboard-surface: #ffffff;
+  --dashboard-border: #e2e8f0;
+  --dashboard-text: #111827;
+  --dashboard-muted: #64748b;
+  --dashboard-accent: #0f766e;
+  --dashboard-accent-soft: #ecfdf5;
+  --dashboard-font-sans: "Lexend", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--dashboard-bg);
+  color: var(--dashboard-text);
+  font-family: var(--dashboard-font-sans);
+}
+
+.dashboard-shell {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 1.5rem;
+}
+
+.dashboard-topbar {
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--dashboard-border);
+  border-radius: 1rem;
+  background: var(--dashboard-surface);
+  padding: 1rem 1.25rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.dashboard-sidebar,
+.dashboard-main {
+  min-width: 0;
+}
+
+.dashboard-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--dashboard-text);
+}
+
+.dashboard-input {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--dashboard-border);
+  background: #fff;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--dashboard-text);
+}
+
+.dashboard-input:focus {
+  outline: 2px solid color-mix(in srgb, var(--dashboard-accent) 30%, transparent);
+  outline-offset: 1px;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
