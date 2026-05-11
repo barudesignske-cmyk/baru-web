@@ -1,6 +1,6 @@
 # Repository Structure
 
-Generated: 2026-05-10 17:57:16 UTC
+Generated: 2026-05-11 02:35:53 UTC
 
 Scope: Files returned by rg --files (respects ignore rules)
 
