@@ -1,5 +1,6 @@
 import {
   ABOUT_COMPANY_SECTION_TYPE,
+  type BwSectionInstance,
   HERO_STATIC_SECTION_TYPE,
   PRODUCT_CLUSTER_OVERVIEW_SECTION_TYPE,
   QUOTE_CTA_SECTION_TYPE,
@@ -13,20 +14,12 @@ import {
   trustSectionDefaultData,
 } from "@baru-web/platform-core";
 
-export type MockHomePageSection = {
-  id: string;
-  type: string;
-  label: string;
-  sortOrder: number;
-  isVisible: boolean;
-  data: unknown;
-};
+export type MockHomePageSection = BwSectionInstance;
 
 export const mockHomePageSections: MockHomePageSection[] = [
   {
     id: "home-hero",
     type: HERO_STATIC_SECTION_TYPE,
-    label: "Hero",
     sortOrder: 10,
     isVisible: true,
     data: heroStaticDefaultData,
@@ -34,41 +27,36 @@ export const mockHomePageSections: MockHomePageSection[] = [
   {
     id: "home-product-clusters",
     type: PRODUCT_CLUSTER_OVERVIEW_SECTION_TYPE,
-    label: "Product Clusters",
     sortOrder: 20,
     isVisible: true,
     data: productClusterOverviewDefaultData,
   },
   {
-    id: "home-stats",
-    type: STATS_BAR_SECTION_TYPE,
-    label: "Stats",
-    sortOrder: 30,
-    isVisible: true,
-    data: statsBarDefaultData,
-  },
-  {
-    id: "home-about",
+    id: "home-about-company",
     type: ABOUT_COMPANY_SECTION_TYPE,
-    label: "About",
-    sortOrder: 40,
+    sortOrder: 30,
     isVisible: true,
     data: aboutCompanyDefaultData,
   },
   {
     id: "home-trust",
     type: TRUST_SECTION_TYPE,
-    label: "Trust",
-    sortOrder: 50,
+    sortOrder: 40,
     isVisible: true,
     data: trustSectionDefaultData,
   },
   {
-    id: "home-cta",
+    id: "home-quote-cta",
     type: QUOTE_CTA_SECTION_TYPE,
-    label: "CTA",
-    sortOrder: 60,
+    sortOrder: 50,
     isVisible: true,
     data: quoteCtaDefaultData,
+  },
+  {
+    id: "home-stats",
+    type: STATS_BAR_SECTION_TYPE,
+    sortOrder: 60,
+    isVisible: true,
+    data: statsBarDefaultData,
   },
 ];

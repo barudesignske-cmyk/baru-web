@@ -1,4 +1,5 @@
 import type { MockHomePageSection } from "@/data/mockHomePageSections";
+import { bwSectionDefinitionMap } from "@baru-web/platform-core";
 
 type SectionListProps = {
   sections: MockHomePageSection[];
@@ -13,6 +14,9 @@ export function SectionList({ sections, selectedSectionId, onSelect }: SectionLi
     <div className="space-y-2">
       {sorted.map((section) => {
         const isSelected = section.id === selectedSectionId;
+        const sectionDefinition =
+          bwSectionDefinitionMap[section.type as keyof typeof bwSectionDefinitionMap];
+
         return (
           <button
             key={section.id}
@@ -24,7 +28,9 @@ export function SectionList({ sections, selectedSectionId, onSelect }: SectionLi
                 : "border-[var(--dashboard-border)] bg-[var(--dashboard-surface)] hover:bg-zinc-50"
             }`}
           >
-            <p className="text-sm font-semibold text-[var(--dashboard-text)]">{section.label}</p>
+            <p className="text-sm font-semibold text-[var(--dashboard-text)]">
+              {sectionDefinition?.label ?? section.type}
+            </p>
             <p className="mt-1 text-xs text-[var(--dashboard-muted)]">{section.type}</p>
             <p className="mt-2 text-[11px] text-[var(--dashboard-muted)]">
               {section.isVisible ? "Visible" : "Hidden"}

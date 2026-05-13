@@ -80,11 +80,11 @@ importers:
         specifier: ^5
         version: 5.9.3
 
-  apps/rfl-theme:
+  apps/sites/rfl:
     dependencies:
       '@baru-web/platform-core':
         specifier: workspace:*
-        version: link:../../packages/platform-core
+        version: link:../../../packages/platform-core
       '@fontsource/lexend':
         specifier: ^5.2.11
         version: 5.2.11

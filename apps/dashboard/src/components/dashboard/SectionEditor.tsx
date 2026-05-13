@@ -1,12 +1,11 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { BwSectionDefinition } from "@baru-web/platform-core";
+import type { BwSectionDefinition, BwSectionInstance } from "@baru-web/platform-core";
 import { GeneratedField } from "@/components/forms/GeneratedField";
-import type { MockHomePageSection } from "@/data/mockHomePageSections";
 
 type SectionEditorProps = {
-  section: MockHomePageSection;
+  section: BwSectionInstance;
   sectionDefinition: BwSectionDefinition<import("zod").ZodTypeAny>;
 };
 
